@@ -1,0 +1,39 @@
+{
+  "measurements": [
+    {
+      "viewport-width": 872,
+      "terminal-size": {
+        "x": 562,
+        "y": 319
+      }
+    },
+    {
+      "viewport-width": 622,
+      "terminal-size": {
+        "x": 363,
+        "y": 243
+      }
+    },
+    {
+      "viewport-width": 1405,
+      "terminal-size": {
+        "x": 990,
+        "y": 480
+      }
+    },
+    {
+      "viewport-width": 1154,
+      "terminal-size": {
+        "x": 792,
+        "y": 401
+      }
+    },
+    {
+      "viewport-width": 762,
+      "terminal-size": {
+        "x": 478,
+        "y": 283
+      }
+    }
+  ]
+}

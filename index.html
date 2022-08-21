@@ -5,20 +5,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>io</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="./images/favicon.ico" />
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <img id="background-image" src="./img/bmmod2-crop.png" alt="batman-cincy">
-
+  <!-- <div class="bg-container">
+  </div> -->
+  <img class="background" src="./images/bmmod2.png" alt="batman-cincy">
   <div class="container">
 
+
+    <!-- HEADING -->
     <div class="heading">
-      <h1 class="name">
-        DAREN PORTER
-      </h1>
+      <div class="name-block">
+        <span class="img-aligner">
+          <img 
+            class="brace lt-brace" 
+            src="./images/lt-brace.svg">
+        </span>
+        <h1 class="name">
+          daren<p>.</p>porter
+        </h1>
+        <span class="img-aligner">
+          <img 
+            class="brace rt-brace" 
+            src="./images/rt-brace.svg">
+        </span>
+      </div>
       <p class="address">
         Cincinnati, OH
         <br>
@@ -26,40 +42,31 @@
       </p>
     </div>
 
+
+
+    <!-- THE MACHINE -->
     <div class="the-machine">
+
+      <!-- button the-buttons -->
+      <div class="the-buttons">
+        <div class="div-next">
+          <p class="label">WORK HISTORY</p>
+          <img class="arrow" src="./images/rt-arrow.svg" width="70px" onclick="displayNextWorkHistoryItem()" />
+        </div>
+        <div class="div-next">
+          <p class="label">SCHOOL HISTORY</p>
+          <img class="arrow" src="./images/rt-arrow.svg" width="70px" onclick="displayNextSchoolHistoryItem()" />
+        </div>
+      </div> <!-- end .the-buttons-->
+
+      <!-- the terminal -->
       <div id="terminal" class="terminal">
         <div class="terminal-text"></div>
-      </div>
+      </div> <!-- end terminal-->
 
-      <div class="bottom-functions">
-        <div class="div-next">
-          <p>
-            NEXT
-          </p>
-          <img src="./img/rt-arrow.svg" width="80px" onclick="displayNextWorkHistoryItem()" />
-          <p>
-            JOB
-            
-          </p>
-        </div>
-        <div class="div-next">
-          <p>
-            NEXT
-          </p>
-          <img src="./img/rt-arrow.svg" width="80px" onclick="displayNexHistoryItem()" />
-          <p>
-            SCHOOL
-          </p>
-        </div>
-      </div>
-      <div></div>
-    </div>
+    </div> <!-- end .the-machine-->
 
-  </div>
-
-  </div>
-
-
+  </div> <!-- end .container-->
 
   <script src="app.js"></script>
 </body>
