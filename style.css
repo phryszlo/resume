@@ -3,8 +3,8 @@
 
 :root {
   --terminal-width: 45vw;
-  --terminal-height: 30vw;
-  --name-color: #123;
+  --terminal-height: 20vw;
+  --name-color: rgba(66, 39, 199, 0.4);
 }
 
 /* html { 
@@ -50,22 +50,22 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 13px solid orange; */
+  height: 15vh;
+
+  /* border: 3px solid orange; */
 }
 
 .heading .name-block {
   display: flex;
-  /* z-index: 119; */
-  /* top: -20px;
-  left: -90px; */
   padding: 0;
   margin: 0;
 
   /* border: solid fuchsia; */
 }
 
-.name-block * {
+.heading .name-block * {
   border: none;
+
   /* border: solid white; */
 }
 
@@ -79,6 +79,7 @@ body {
   padding: 0;
   height: 92px;
   width: 90px;
+  
   /* border: 2px solid #f9f; */
 }
 
@@ -146,16 +147,48 @@ body {
 
 
 .the-machine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* anim. starts opacity at 0 -> 1. 
+  have to set it to 0 and 'forwards' to prevent brief appearance */
   opacity: 0;
   animation: loadMachine 0s forwards;
   width: 80vw;
   height: 60vh;
   margin: auto;
   margin-top: 30px;
+
+  /* border: 2px solid pink; */
+}
+
+.machine-inner {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 2px solid pink; */
+  /* width: auto;
+  margin: auto; */
+}
+
+
+.the-machine .buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 14em;
+  
+  /* border: 2px solid yellow; */
+}
+
+.div-next .arrow {
+  cursor: pointer;
+  filter: hue-rotate(155deg);
+
+}
+
+.div-next .arrow:hover {
+  filter: none;
+  filter: invert();
 }
 
 .terminal {
@@ -163,17 +196,21 @@ body {
   flex-basis: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-around;
   font-family: monospace;
   background-color: #111111af;
   border-radius: 20px;
   color: rgb(130, 211, 130);
   font-size: 21px;
+  min-width: 480px;
+  min-height: 260px;
+  max-width: 551px;
+  max-height: 358px;
   width: var(--terminal-width);
   height: var(--terminal-height);
-  margin: auto;
+  /* margin: auto; */
   padding: 25px;
-  box-shadow: 100px 80px 135px 5px #666633cc,
+  box-shadow: 70px 30px 135px 5px #666633cc,
     -80px -60px 145px 45px #663366bb;
 
   border: solid .2px #9ff;
@@ -181,7 +218,7 @@ body {
 
 .terminal-head {
   /* created in app.js displayNext[School]HistoryItem */
-  color: var(--name-color);
+  color: #c54;
   margin-bottom: 8px;
   /* border: solid .2px greenyellow; */
 }
@@ -197,17 +234,6 @@ body {
 }
 
 
-.the-buttons {
-  /* position: relative;
-  top: 90px; */
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-  height: 6em;
-
-  /* border: 2px solid yellow; */
-}
 
 .div-next {
   z-index: 100;
@@ -233,28 +259,11 @@ body {
   /* border: solid yellow; */
 }
 
-.div-next .arrow {
-  cursor: pointer;
-}
-
-.div-next .arrow:hover {
-  filter: invert();
-}
-
-.the-buttons button {
-  height: 3em;
-  padding: 10px;
-  margin: 0 10px;
-  background-color: #6b40;
-  color: #000;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  letter-spacing: .1pc;
-}
 
 
 
-@media (max-width: 695px) {
+/* @media (max-width: 695px) {
   .terminal {
     width: 70vw;
   }
-}
+} */

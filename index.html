@@ -14,7 +14,12 @@
 
   <!-- <div class="bg-container">
   </div> -->
-  <img class="background" src="./images/bmmod2.png" alt="batman-cincy">
+  <!-- <img class="background" src="./images/bmmod2.png" alt="batman-cincy"> -->
+  <img class="background" src="./images/sunset1.jpg" alt="">
+  <!-- <img class="background" src="./images/sunset2.jpg" alt=""> -->
+  <!-- <img class="background" src="./images/effect.jpg" alt=""> -->
+  <!-- <img class="background" src="./images/fairview.jpg" alt=""> -->
+  <!-- <img class="background" src="./images/duskouette.png" alt=""> -->
   <div class="container">
 
 
@@ -22,17 +27,13 @@
     <div class="heading">
       <div class="name-block">
         <span class="img-aligner">
-          <img 
-            class="brace lt-brace" 
-            src="./images/lt-brace.svg">
+          <img class="brace lt-brace" src="./images/lt-brace.svg">
         </span>
         <h1 class="name">
           daren<p>.</p>porter
         </h1>
         <span class="img-aligner">
-          <img 
-            class="brace rt-brace" 
-            src="./images/rt-brace.svg">
+          <img class="brace rt-brace" src="./images/rt-brace.svg">
         </span>
       </div>
       <p class="address">
@@ -47,23 +48,25 @@
     <!-- THE MACHINE -->
     <div class="the-machine">
 
-      <!-- button the-buttons -->
-      <div class="the-buttons">
-        <div class="div-next">
-          <p class="label">WORK HISTORY</p>
-          <img class="arrow" src="./images/rt-arrow.svg" width="70px" onclick="displayNextWorkHistoryItem()" />
-        </div>
-        <div class="div-next">
-          <p class="label">SCHOOL HISTORY</p>
-          <img class="arrow" src="./images/rt-arrow.svg" width="70px" onclick="displayNextSchoolHistoryItem()" />
-        </div>
-      </div> <!-- end .the-buttons-->
+      <div class="machine-inner">
+        <!-- button buttons -->
+        <div class="buttons">
+          <div class="div-next">
+            <p class="label">CYCLE <br> SCHOOL <br> HISTORY</p>
+            <img class="arrow" src="./images/rt-arrow.svg" width="70px" onclick="displayNextSchoolHistoryItem()" />
+          </div>
+          <div class="div-next">
+            <p class="label">CYCLE <br> WORK <br> HISTORY</p>
+            <img class="arrow" src="./images/rt-arrow.svg" width="70px" onclick="displayNextWorkHistoryItem()" />
+          </div>
+        </div> <!-- end .buttons-->
 
-      <!-- the terminal -->
-      <div id="terminal" class="terminal">
-        <div class="terminal-text"></div>
-      </div> <!-- end terminal-->
-
+        <!-- the terminal -->
+        <div id="terminal" class="terminal">
+          <div class="terminal-text top"></div>
+          <div class="terminal-text bottom"></div>
+        </div> <!-- end terminal-->
+      </div> <!-- end machine-inner-->
     </div> <!-- end .the-machine-->
 
   </div> <!-- end .container-->

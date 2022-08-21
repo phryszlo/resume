@@ -94,13 +94,13 @@ const cycleSchoolHistory = () => {
   return result;
 }
 
-const displayNextWorkHistoryItem = () => {
-  const target = document.querySelector(".terminal-text");
-  target.innerHTML = `<div class='terminal-head'>Now showing ${nowShowingJob + 1} / ${workHistory.jobs.length}</div>${cycleWorkHistory()}`;
-}
 const displayNextSchoolHistoryItem = () => {
-  const target = document.querySelector(".terminal-text");
+  const target = document.querySelector(".terminal-text.top");
   target.innerHTML = `<div class='terminal-head'>Now showing ${nowShowingSchool + 1} / ${schoolHistory.schools.length}</div>${cycleSchoolHistory()}`;
+}
+const displayNextWorkHistoryItem = () => {
+  const target = document.querySelector(".terminal-text.bottom");
+  target.innerHTML = `<div class='terminal-head'>Now showing ${nowShowingJob + 1} / ${workHistory.jobs.length}</div>${cycleWorkHistory()}`;
 }
 
 const changeBackground = () => {
