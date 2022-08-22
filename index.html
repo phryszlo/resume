@@ -24,7 +24,9 @@
   <!-- <img class="background" src="images/backgrounds/phoenix.jpg" alt=""> -->
   <div class="container">
 
-    <div class="change-color" onclick="cycleBackgroundImages()">
+    <!-- all click event handlers now added in DOMContentLoaded -->
+    <!--  onclick="cycleBackgroundImages()" -->
+    <div class="change-color">
       <img class="icon" src="images/quiet-trans-800.png">
     </div>
 
@@ -59,12 +61,12 @@
           <div class="div-next">
             <!-- <p class="label">CYCLE <br> SCHOOL <br> HISTORY</p> -->
             <p class="label school">CYCLE SCHOOL HISTORY</p>
-            <img class="arrow" src="images/rt-arrow.svg" width="70px" onclick="displayNextSchoolHistoryItem()" />
+            <img class="arrow school" src="images/rt-arrow.svg" width="70px" />
           </div>
           <div class="div-next work">
             <!-- <p class="label">CYCLE <br> WORK <br> HISTORY</p> -->
-            <p class="label">CYCLE WORK HISTORY</p>
-            <img class="arrow" src="images/rt-arrow.svg" width="70px" onclick="displayNextWorkHistoryItem()" />
+            <p class="label work">CYCLE WORK HISTORY</p>
+            <img class="arrow work" src="images/rt-arrow.svg" width="70px" />
           </div>
         </div> <!-- end .buttons-->
 
@@ -83,7 +85,7 @@
 
   </div> <!-- end .container-->
 
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 
 </html>
