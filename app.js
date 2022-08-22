@@ -1,4 +1,5 @@
 import resume from './resume.js';
+import backgroundImages from './backgroundImages.js';
 
 const summary = resume.summary;
 const workHistory = resume.workHistory;
@@ -71,21 +72,8 @@ const displayNextWorkHistoryItem = () => {
 }
 
 
-
-/* BACKGROUND IMAGE ARRAY */
+// Background Images index
 let idxBg = 0;
-const backgroundImages = [
-  "black.png",
-  "silhouetted.png",
-  "bmmod1.png",
-  // "sunset1.jpg",
-  "phoenix.jpg",
-  // "bmmod2.png",
-  "sunset2.jpg"
-
-];
-
-
 
 const cycleBackgroundImages = () => {
   if (idxBg === (backgroundImages.length - 1)) {
