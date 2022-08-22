@@ -174,7 +174,7 @@ body {
   /* anim. starts opacity at 0 -> 1. 
   have to set it to 0 and 'forwards' to prevent brief appearance */
   opacity: 0;
-  animation: loadMachine 5s forwards;
+  animation:  5s linear 3s forwards loadMachine;
   min-width: 691px;
   width: 80vw;
   height: 60vh;
@@ -244,8 +244,8 @@ body {
   /* transform: rotate(12deg); */
 }
 .div-next .arrow:hover {
-  filter: hue-rotate(165deg) saturate(200%);
-  filter: hue-rotate(255deg);
+  filter: invert() saturate(200%) brightness(300%);
+  /* filter: hue-rotate(255deg); */
 }
 
 .terminal {
