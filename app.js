@@ -59,7 +59,9 @@ const schoolHistory = {
 
 
 
-
+/*
+  WORK AND SCHOOL HISTORY COUNTERS
+*/
 let nowShowingJob = 0;
 let nowShowingSchool = 0;
 const cycleWorkHistory = () => {
@@ -74,12 +76,10 @@ const cycleWorkHistory = () => {
     : nowShowingJob++;
 
   console.log(result);
-
   return result;
 }
+
 const cycleSchoolHistory = () => {
-
-
   let result = schoolHistory.schools[nowShowingSchool].school;
   result += '<br>'
   result += schoolHistory.schools[nowShowingSchool].years;
@@ -95,124 +95,61 @@ const cycleSchoolHistory = () => {
 }
 
 const displayNextSchoolHistoryItem = () => {
-  const target = document.querySelector(".terminal-text.top");
+  const target = document.querySelector(".terminal-inner.top");
   target.innerHTML = `<div class='terminal-head'>Now showing ${nowShowingSchool + 1} / ${schoolHistory.schools.length}</div>${cycleSchoolHistory()}`;
 }
 const displayNextWorkHistoryItem = () => {
-  const target = document.querySelector(".terminal-text.bottom");
+  const target = document.querySelector(".terminal-inner.bottom");
   target.innerHTML = `<div class='terminal-head'>Now showing ${nowShowingJob + 1} / ${workHistory.jobs.length}</div>${cycleWorkHistory()}`;
 }
 
-const changeBackground = () => {
-
-}
 
 
+/* BACKGROUND IMAGE ARRAY */
+let idxBg = 0;
+const backgroundImages = [
+  "silhouetted.png",
+  "bmmod1.png",
+  "sunset1.jpg",
+  "phoenix.jpg",
+  // "bmmod2.png",
+  "sunset2.jpg"
 
+];
 
+/* DOMCONTENTLOADED 
+after all elements have been rendered 
+    check which image has been set as the background
+    and find the index of its match in the bg array */
+window.addEventListener('DOMContentLoaded', () => {
+  const target = document.querySelector(".background");
+  const nowShowing = target.src.substring(target.src.indexOf('/') + 1);
+  console.log(nowShowing.substring(nowShowing.lastIndexOf('/') + 1));
+  const idxNowShowing = backgroundImages.findIndex((path) =>
+    path === nowShowing.substring(nowShowing.lastIndexOf('/') + 1)
+  );
+  idxBg = idxNowShowing;
+});
 
-/*
-  next part taken from
-    https://codepen.io/wheelercode/pen/LYzaxgQ
-*/
-
-let drag_div, hit_div;
-let win_rect; // window client area
-let dragging;
-let offset;
-let colors = {
-  up: "rgb(255, 254, 165)",
-  down: "rgb(165, 255, 180)",
-  bg: "rgb(255, 165, 165)"
-}
-
-// add hit-test functionality to DOMRect
-DOMRect.prototype.hit = function (x, y) {
-  return x >= this.left && x <= this.right &&
-    y >= this.top && y <= this.bottom;
-}
-
-// yum
-function px(n) {
-  return `${n}px`;
-}
-
-function init() {
-  // HTML elements
-  drag_div = document.getElementById("terminal");
-  hit_div = document.getElementById("terminal");
-
-  // listeners
-  window.addEventListener("pointerdown", pointerDown);
-  window.addEventListener("pointermove", pointerMove);
-  window.addEventListener("pointerup", pointerUp);
-  window.addEventListener("resize", resize);
-
-  // init data
-  dragging = false;
-  offset = { x: 0, y: 0 }
-  win_rect = document.body.getBoundingClientRect();
-
-  // position div to center
-  let drag_rect = drag_div.getBoundingClientRect();
-  let left = Math.round((win_rect.width / 2) - (drag_rect.width / 2));
-  let top = Math.round((win_rect.height / 2) - (drag_rect.height / 2));
-  drag_div.style.left = px(left);
-  drag_div.style.top = px(top);
-}
-
-function resize(event) {
-  // keep track of changed client area dimensions 
-  win_rect = document.body.getBoundingClientRect();
-}
-
-function pointerDown(event) {
-  let [x, y] = [event.clientX, event.clientY];
-  let drag_rect = drag_div.getBoundingClientRect();
-  hit_rect = hit_div.getBoundingClientRect();
-  if (hit_rect.hit(x, y)) {
-    dragging = true;
-    offset.x = x - drag_rect.x;
-    offset.y = y - drag_rect.y;
-    // hit_div.style.backgroundColor = colors.down;
+const cycleBackgroundImages = () => {
+  if (idxBg === (backgroundImages.length - 1)) {
+    console.log('idxBg max')
+    idxBg = 0;
   }
-}
-
-
-function pointerMove(event) {
-  let [x, y] = [event.clientX, event.clientY];
-  let drag_rect = drag_div.getBoundingClientRect();
-  if (dragging) {
-    let left = x - offset.x;
-    let right = left + drag_rect.width;
-    let top = y - offset.y;
-    let bottom = top + drag_rect.height;
-
-    // prevent dragging off screen left/right
-    if (left < 0) {
-      left = 0;
-    } else if (right > win_rect.right) {
-      left = win_rect.right - drag_rect.width;
-    }
-
-    // prevent dragging off screen top/bottom 
-    if (top < 0) {
-      top = 0;
-    } else if (bottom > win_rect.bottom) {
-      top = win_rect.bottom - drag_rect.height;
-    }
-
-    drag_div.style.left = px(left);
-    drag_div.style.top = px(top);
+  else {
+    idxBg++;
   }
+  console.log(`${idxBg}/${backgroundImages.length - 1}`)
+
+  const target = document.querySelector(".background");
+
+  target.src = `images/backgrounds/${backgroundImages[idxBg]}`;
+
+
 }
 
-function pointerUp(event) {
-  dragging = false;
-  // hit_div.style.backgroundColor = colors.up;
-}
 
-init();
+
 
 
 

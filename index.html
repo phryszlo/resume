@@ -14,26 +14,30 @@
 
   <!-- <div class="bg-container">
   </div> -->
-  <!-- <img class="background" src="./images/bmmod2.png" alt="batman-cincy"> -->
-  <img class="background" src="./images/sunset1.jpg" alt="">
-  <!-- <img class="background" src="./images/sunset2.jpg" alt=""> -->
-  <!-- <img class="background" src="./images/effect.jpg" alt=""> -->
-  <!-- <img class="background" src="./images/fairview.jpg" alt=""> -->
-  <!-- <img class="background" src="./images/duskouette.png" alt=""> -->
+  <img class="background" src="./images/backgrounds/bmmod1.png" alt="batman-cincy">
+  <!-- <img class="background" src="./images/backgrounds/sunset1.jpg" alt=""> -->
+  <!-- <img class="background" src="./images/backgrounds/sunset2.jpg" alt=""> -->
+  <!-- <img class="background" src="./images/backgrounds/effect.jpg" alt=""> -->
+  <!-- <img class="background" src="./images/backgrounds/fairview.jpg" alt=""> -->
+  <!-- <img class="background" src="images/backgrounds/duskouette.png" alt=""> -->
+  <!-- <img class="background" src="images/backgrounds/phoenix.jpg" alt=""> -->
   <div class="container">
 
+    <div class="change-color" onclick="cycleBackgroundImages()">
+      <img class="icon" src="images/quiet-trans-800.png">
+    </div>
 
     <!-- HEADING -->
     <div class="heading">
       <div class="name-block">
         <span class="img-aligner">
-          <img class="brace lt-brace" src="./images/lt-brace.svg">
+          <img class="brace lt-brace" src="images/lt-brace.svg">
         </span>
         <h1 class="name">
           daren<p>.</p>porter
         </h1>
         <span class="img-aligner">
-          <img class="brace rt-brace" src="./images/rt-brace.svg">
+          <img class="brace rt-brace" src="images/rt-brace.svg">
         </span>
       </div>
       <p class="address">
@@ -52,19 +56,26 @@
         <!-- button buttons -->
         <div class="buttons">
           <div class="div-next">
-            <p class="label">CYCLE <br> SCHOOL <br> HISTORY</p>
-            <img class="arrow" src="./images/rt-arrow.svg" width="70px" onclick="displayNextSchoolHistoryItem()" />
+            <!-- <p class="label">CYCLE <br> SCHOOL <br> HISTORY</p> -->
+            <p class="label school">CYCLE SCHOOL HISTORY</p>
+            <img class="arrow" src="images/rt-arrow.svg" width="70px" onclick="displayNextSchoolHistoryItem()" />
           </div>
-          <div class="div-next">
-            <p class="label">CYCLE <br> WORK <br> HISTORY</p>
-            <img class="arrow" src="./images/rt-arrow.svg" width="70px" onclick="displayNextWorkHistoryItem()" />
+          <div class="div-next work">
+            <!-- <p class="label">CYCLE <br> WORK <br> HISTORY</p> -->
+            <p class="label">CYCLE WORK HISTORY</p>
+            <img class="arrow" src="images/rt-arrow.svg" width="70px" onclick="displayNextWorkHistoryItem()" />
           </div>
         </div> <!-- end .buttons-->
 
         <!-- the terminal -->
         <div id="terminal" class="terminal">
-          <div class="terminal-text top"></div>
-          <div class="terminal-text bottom"></div>
+          <div class="terminal-inner top">
+            <!-- <div class="callout top"></div> -->
+          </div>
+          <div class="divider"></div>
+          <div class="terminal-inner bottom">
+            <!-- <div class="callout bottom"></div> -->
+          </div>
         </div> <!-- end terminal-->
       </div> <!-- end machine-inner-->
     </div> <!-- end .the-machine-->
